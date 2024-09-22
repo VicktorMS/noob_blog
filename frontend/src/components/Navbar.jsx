@@ -39,9 +39,6 @@ function Navbar() {
           <Link href='/create'>
             <Button>Create Post</Button>
           </Link>
-          <Link href='/'>
-            <Button>Post</Button>
-          </Link>
         </HStack>
       </Flex>
 

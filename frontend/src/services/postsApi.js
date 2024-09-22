@@ -11,6 +11,7 @@ export const createNewPost = async (newPost) => {
         },
         body: JSON.stringify(newPost),
     });
+    console.log(newPost)
     return await res.json();
 };
 

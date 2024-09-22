@@ -60,8 +60,8 @@ function CreatePage() {
 						<Input
 							placeholder='Title'
 							name='title'
-							value={newPost.name}
-							onChange={(e) => setNewPost({ ...newPost, name: e.target.value })}
+							value={newPost.title}
+							onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
 						/>
 						<Input
 							placeholder='Content'
@@ -72,7 +72,7 @@ function CreatePage() {
 						<Input
 							placeholder='Author'
 							name='author'
-							value={newPost.image}
+							value={newPost.author}
 							onChange={(e) => setNewPost({ ...newPost, author: e.target.value })}
 						/>
 

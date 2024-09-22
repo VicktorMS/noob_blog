@@ -10,7 +10,7 @@ function HomePage() {
 
   useEffect(() =>{
     fetchPosts();
-  }, [fetchPosts])
+  }, [])
 
 
   return (
