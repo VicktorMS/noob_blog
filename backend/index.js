@@ -1,11 +1,14 @@
 import express from "express";
 import dotenv from 'dotenv';
 import { connectDB } from "./config/db.js";
+import Post from "./models/post.model.js";
 
 dotenv.config();
 
 const app = express();
 
+
+app.use(express.json()); // Allows us to accept JSON data in the body of the request
 
 app.get("/", (req, res) => {
     res.send("Hello World!");
@@ -22,9 +25,9 @@ app.post("/posts", async (req, res) => {
 
     try {
         await newPost.save();
-        res.status(201).json({success: true, message: "Post created successfully" });
+        res.status(201).json({success: true, data: newPost });
     } catch (error) {
-        console.log(error); // Remover em prod
+        console.log("Error in creating post: ",error); // Remover em prod
         res.status(500).json({success: false, message: "Failed to create post" });
     }
 })
