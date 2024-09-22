@@ -6,7 +6,7 @@ export const deletePostById = async (req, res) => {
     const {id} = req.params;
 
     if(!mongoose.Types.ObjectId.isValid(req.query.author)) {
-        return res.status(400).json({success: false, message: "Invalid Post ID" });
+        return res.status(404).json({success: false, message: "Invalid Post ID" });
     }
 
     try {
